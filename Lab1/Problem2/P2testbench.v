@@ -1,5 +1,3 @@
-'timescale 1ns/1ps
-
 module test_cla4(A, B, c0);
 
     output [3:0] A, B;
