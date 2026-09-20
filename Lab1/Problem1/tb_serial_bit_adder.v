@@ -10,11 +10,11 @@ module serial_bit_adder_tb;
     reg clr_n;
     reg set_n;
     reg load;
-    reg [WIDTH-1:0] augend_in, 
+    reg [WIDTH-1:0] augend_in;
     reg [WIDTH-1:0] addend_in;
     reg [WIDTH-1:0] expected;
  
-    wire [WIDTH-1:0] result_b, // Behavioral result
+    wire [WIDTH-1:0] result_b; // Behavioral result
     wire [WIDTH-1:0] result_s; // Structural result
  
     integer errors = 0;
@@ -49,7 +49,7 @@ module serial_bit_adder_tb;
         addend_in = {WIDTH{1'b0}};
         expected  = {WIDTH{1'b0}};
  
-        $display(Behavioral vs. Structural Comparison of Serial Bit Adder);
+        $display("Behavioral vs. Structural Comparison of Serial Bit Adder");
  
         augend_in = 8'd25;  
         addend_in = 8'd37;  
