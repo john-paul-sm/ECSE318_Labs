@@ -57,5 +57,6 @@ endmodule
 Other notes:
 1. I decided to change cout from an output port to an internal port since the result isn't used besides being driven in the carry-in d-flip flop
 2. When a load is asserted on a positive edge clock, I also cleared the result register for completeness
-
+3. I added a clear/set functionality since they were considered on the diagram. Otherwise, the design could've been more simplified.
+4. The SRL (shift right logical) operation could;ve also been used for the input registers
 */
