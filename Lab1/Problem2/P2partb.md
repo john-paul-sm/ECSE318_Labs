@@ -1,2 +1,0 @@
-# Problem 2 Part (b)
-## To find the worst-case delay from C0, you need to count how many gates a signal passes through and since each gate has a delay of 10 ns, C0 reaching any carry bit will take two gate delays (20 ns), and the sum bit adds one more gate delay with the XOR gate after the AND and OR gates. This path is only posssible if both A and B are different in bits 0, 1, and 2. So, choosing A = 0101 and B = 1010 makes every bit differ, causing the longest path in the circuit to run from C0 to Sum3 for a total of 30 ns from 3 gate delays.

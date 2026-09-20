@@ -43,7 +43,7 @@ module serial_bit_adder_behavioral #(
         if (load) begin
             augend_reg <= augend_in;
             addend_reg <= addend_in;
-            result <= {WIDTH{1'b0}} // clear result when loading new augend/addends
+            result <= {WIDTH{1'b0}}; // clear result when loading new augend/addends
         end
         else begin
             augend_reg <= {1'b0, augend_reg[WIDTH-1:1]};
