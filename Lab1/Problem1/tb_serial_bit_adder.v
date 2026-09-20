@@ -1,4 +1,4 @@
-timescale 1ns / 1ps
+`timescale 1ns / 1ps
 
 // This testbench is supposed to test the equivalence function of the behavioral and structural (gate-level) implementations of a N-Bit Serial Adder
 

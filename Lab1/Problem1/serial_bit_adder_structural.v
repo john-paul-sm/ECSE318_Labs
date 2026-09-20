@@ -82,7 +82,7 @@ module shift_register #(
  
     genvar i;
     generate
-        for (i = 0; i < WIDTH; i = i + 1) begin : cell
+        for (i = 0; i < WIDTH; i = i + 1) begin : cells
             mux2 m (.sel(load), .d0(chain[i+1]), .d1(pin[i]), .y(d[i]));
             dff_sc r (.clk(clk), .clr_n(1'b1), .set_n(1'b1), .d(d[i]), .q(q[i]));
         end
