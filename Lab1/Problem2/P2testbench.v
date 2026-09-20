@@ -21,8 +21,8 @@ module testbenchP2;
     wire [3:0] sum, A, B;
     wire cout, c0;
 
-    cla4 design(sum, cout, c0, A, B);
-    test_cla4 test(A, B, c0);
+    cla4 d(sum, cout, c0, A, B);
+    test_cla4 t(A, B, c0);
 
     initial begin
         $monitor("Time: %0t | A: %b | B: %b | c0: %b | sum: %b | cout: %b", $time, A, B, c0, sum, cout);  
