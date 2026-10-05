@@ -1,5 +1,6 @@
 module processor (clk, reset, halt);
 
+    parameter PROG = 1; // 1 = part 2a, 2 = part 2b, 3 = part 2c
     input clk, reset;
     output halt;
     reg halt;
@@ -13,7 +14,7 @@ module processor (clk, reset, halt);
     parameter ADD = 4'd5;
     parameter ROT = 4'd6;
     parameter SHF = 4'd7;
-    parameter HLF = 4'd8;
+    parameter HLT = 4'd8;
     parameter CMP = 4'd9;
 
     // Source types
@@ -212,7 +213,7 @@ module processor (clk, reset, halt);
         end
     end
 
-    // Ram memory model
+    // RAM memory model
     initial begin
         if (PROG == 1) begin
         // Part 2a
