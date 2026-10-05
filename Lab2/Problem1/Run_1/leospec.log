@@ -1,0 +1,140 @@
+/mgc/Leonardo/bin/Linux/spectrum 
+-------------------------------------------------
+LeonardoSpectrum Level 3 - 2009a.6 (Release Production Release, compiled Aug 17 2009 at 17:56:52)
+Copyright 1990-2009 Mentor Graphics.  All rights reserved.
+Portions copyright 1991-2009 Compuware Corporation
+
+Checking Security ...
+
+   *** Welcome to Interactive LeonardoSpectrum Level 3 Version 2009a.6 ***
+
+News :
+  * Enter "help" to get an overview of all commands
+  * Enter <command> -help  to get usage of each command
+
+Session history will be logged to file '/home/jsm232/verilog_dir/Lab2/Problem1/leospec.his'
+Reading library file `/mgc/Leonardo/lib/ami05_typ.syn`...
+Library version = 3.0 Release : Patch (a) : 09/13/04
+Delays assume: Process=typical Temp= 27.0 C  Voltage=5.00 V  
+Info: setting encoding to auto
+Info, Command 'load_library' finished successfully
+-- Reading file '/home/jsm232/verilog_dir/Lab2/Problem1/adder.v'...
+-- Loading module 'adder'
+-- Compiling root module 'adder'
+"/home/jsm232/verilog_dir/Lab2/Problem1/adder.v",line 22: Info, case choices are mutually exclusive; inferring parallel case.
+Info, Command 'read' finished successfully
+-- Reading file '/home/jsm232/verilog_dir/Lab2/Problem1/alu.v'...
+-- Loading module 'alu'
+"/home/jsm232/verilog_dir/Lab2/Problem1/alu.v",line 38: Warning, add_cout is never used.
+-- Compiling root module 'alu'
+"/home/jsm232/verilog_dir/Lab2/Problem1/alu.v",line 69: Info, case choices are mutually exclusive; inferring parallel case.
+Info, Command 'read' finished successfully
+-- Boundary optimization.
+-- Start pre-optimization for design .work.adder.INTERFACE_unfold_1221
+-- Start pre-optimization for design .work.alu.INTERFACE
+Info, Command 'pre_optimize' finished successfully
+-- Start pre-optimization for design .work.adder.INTERFACE_unfold_1221
+-- Start pre-optimization for design .work.alu.INTERFACE
+Info, Command 'pre_optimize' finished successfully
+Info: The target technology was not selected, ami05_typ was automatically selected for you.
+-- Optimizing netlist .work.adder.INTERFACE_unfold_1221
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+Re-checking DRC after adjustments
+-- Optimizing netlist .work.alu.INTERFACE
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+Re-checking DRC after adjustments
+WARNING: transition time DRC violation on net alu.INTERFACE:nx496 cannot be fixed
+WARNING: transition time DRC violation on net alu.INTERFACE:nx1734 cannot be fixed
+Re-checking DRC after adjustments
+WARNING: transition time DRC violation on net alu.INTERFACE:nx496 cannot be fixed
+WARNING: transition time DRC violation on net alu.INTERFACE:nx1734 cannot be fixed
+-- Final Design Rule Check..
+Re-checking DRC after adjustments
+WARNING: transition time DRC violation on net alu.INTERFACE:nx496 cannot be fixed
+WARNING: transition time DRC violation on net alu.INTERFACE:nx1734 cannot be fixed
+Re-checking DRC after adjustments
+WARNING: transition time DRC violation on net alu.INTERFACE:nx496 cannot be fixed
+WARNING: transition time DRC violation on net alu.INTERFACE:nx1734 cannot be fixed
+Info, Command 'optimize' finished successfully
+Info: The target technology was not selected, ami05_typ was automatically selected for you.
+Info, Instances dissolved by autodissolve in View .work.alu.INTERFACE
+"/home/jsm232/verilog_dir/Lab2/Problem1/alu.v", line 54: u_adder (adder)
+-- Optimizing netlist .work.alu.INTERFACE
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+WARNING: transition time DRC violation on net alu.INTERFACE:nx496 cannot be fixed
+WARNING: transition time DRC violation on net alu.INTERFACE:nx1734 cannot be fixed
+-- Final Design Rule Check..
+WARNING: transition time DRC violation on net alu.INTERFACE:nx496 cannot be fixed
+WARNING: transition time DRC violation on net alu.INTERFACE:nx1734 cannot be fixed
+Info, Command 'optimize' finished successfully
+-- Start timing optimization for design .work.alu.INTERFACE
+No critical paths to optimize at this level
+WARNING: transition time DRC violation on net alu.INTERFACE:nx496 cannot be fixed
+WARNING: transition time DRC violation on net alu.INTERFACE:nx1734 cannot be fixed
+Info, Command 'optimize_timing' finished successfully
+Info: setting edif_write_arrays to FALSE
+FALSE
+-- Writing file Proc.vhd
+Info, Command 'write' finished successfully
+-- Writing file Proc.edf
+Info, Command 'write' finished successfully
+-- Writing file Proc.v
+Info, Command 'write' finished successfully
+-- Writing file Proc.sdf
+Info, Command 'write' finished successfully
+CriticalPath
+
+
+
+                        Critical Path Report
+
+Critical path #1, (unconstrained path)
+NAME                               GATE              ARRIVAL              LOAD
+------------------------------------------------------------------------------
+alu_code(1)/                                   0.00  0.00 dn             0.34
+ix1220/Y                           inv02       0.12  0.12 up             0.03
+ix1747/Y                           nor04       0.40  0.52 dn             0.01
+ix1888/Y                           buf02       0.51  1.03 dn             0.06
+u_adder_ix534/Y                    aoi22       0.42  1.46 up             0.05
+u_adder_ix532/Y                    mux21_ni    0.86  2.32 up             0.05
+u_adder_ix171/Y                    oai22       0.58  2.90 dn             0.05
+u_adder_ix526/Y                    aoi22       0.54  3.43 up             0.05
+u_adder_ix279/Y                    oai22       0.64  4.08 dn             0.05
+u_adder_ix520/Y                    aoi22       0.55  4.62 up             0.05
+u_adder_ix387/Y                    oai22       0.64  5.27 dn             0.05
+u_adder_ix514/Y                    aoi22       0.55  5.81 up             0.05
+u_adder_ix495/Y                    oai22       0.64  6.46 dn             0.05
+u_adder_ix508/Y                    aoi22       0.55  7.00 up             0.05
+u_adder_ix603/Y                    oai22       0.64  7.65 dn             0.05
+u_adder_ix502/Y                    aoi22       0.55  8.19 up             0.05
+u_adder_ix711/Y                    oai22       0.64  8.84 dn             0.05
+u_adder_ix496/Y                    aoi22       0.55  9.38 up             0.05
+u_adder_ix797/Y                    oai22       0.59  9.98 dn             0.04
+u_adder_ix492/Y                    xnor2       0.37  10.35 up             0.06
+u_adder_ix801/Y                    inv02       0.17  10.52 dn             0.01
+u_adder_ix931/Y                    aoi22       0.35  10.87 up             0.02
+u_adder_ix829/Y                    oai221      0.54  11.41 dn             0.02
+ix1870/Y                           aoi221      0.53  11.94 up             0.02
+ix1745/Y                           nand04      0.26  12.20 dn             0.00
+C(15)/                                         0.00  12.20 dn             0.00
+data arrival time                                    12.20
+
+data required time                                not specified
+------------------------------------------------------------------------------
+data required time                                not specified
+data arrival time                                    12.20
+                                                  ----------
+                                               unconstrained path
+------------------------------------------------------------------------------
+
+
+Info, Command 'report_delay' finished successfully

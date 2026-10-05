@@ -1,0 +1,210 @@
+/mgc/Leonardo/bin/Linux/spectrum 
+-------------------------------------------------
+LeonardoSpectrum Level 3 - 2009a.6 (Release Production Release, compiled Aug 17 2009 at 17:56:52)
+Copyright 1990-2009 Mentor Graphics.  All rights reserved.
+Portions copyright 1991-2009 Compuware Corporation
+
+Checking Security ...
+
+   *** Welcome to Interactive LeonardoSpectrum Level 3 Version 2009a.6 ***
+
+News :
+  * Enter "help" to get an overview of all commands
+  * Enter <command> -help  to get usage of each command
+
+Session history will be logged to file '/home/jsm232/verilog_dir/Lab2/Problem1/leospec.his'
+Reading library file `/mgc/Leonardo/lib/ami05_typ.syn`...
+Library version = 3.0 Release : Patch (a) : 09/13/04
+Delays assume: Process=typical Temp= 27.0 C  Voltage=5.00 V  
+Info: setting encoding to auto
+Info, Command 'load_library' finished successfully
+-- Reading file '/home/jsm232/verilog_dir/Lab2/Problem1/adder.v'...
+-- Loading module 'ks_level'
+-- Loading module 'adder'
+"/home/jsm232/verilog_dir/Lab2/Problem1/adder.v",line 42: Warning, P4 is never used.
+-- Compiling root module 'adder'
+-- Compiling module ks_level
+Info, Command 'read' finished successfully
+-- Reading file '/home/jsm232/verilog_dir/Lab2/Problem1/alu.v'...
+-- Loading module 'alu'
+"/home/jsm232/verilog_dir/Lab2/Problem1/alu.v",line 38: Warning, add_cout is never used.
+-- Compiling root module 'alu'
+"/home/jsm232/verilog_dir/Lab2/Problem1/alu.v",line 69: Info, case choices are mutually exclusive; inferring parallel case.
+Info, Command 'read' finished successfully
+-- Boundary optimization.
+-- Boundary optimization.
+-- Boundary optimization.
+-- Boundary optimization.
+-- Boundary optimization.
+-- Start pre-optimization for design .work.ks_level.INTERFACE_unfold_940
+-- Start pre-optimization for design .work.ks_level.INTERFACE_unfold_941
+-- Start pre-optimization for design .work.ks_level.INTERFACE_unfold_942
+-- Start pre-optimization for design .work.ks_level.INTERFACE_unfold_943
+-- Start pre-optimization for design .work.adder.INTERFACE_unfold_1221
+-- Start pre-optimization for design .work.alu.INTERFACE
+Info, Command 'pre_optimize' finished successfully
+-- Start pre-optimization for design .work.ks_level.INTERFACE_unfold_940
+-- Start pre-optimization for design .work.ks_level.INTERFACE_unfold_941
+-- Start pre-optimization for design .work.ks_level.INTERFACE_unfold_942
+-- Start pre-optimization for design .work.ks_level.INTERFACE_unfold_943
+-- Start pre-optimization for design .work.adder.INTERFACE_unfold_1221
+-- Start pre-optimization for design .work.alu.INTERFACE
+Info, Command 'pre_optimize' finished successfully
+Info: The target technology was not selected, ami05_typ was automatically selected for you.
+-- Optimizing netlist .work.ks_level.INTERFACE_unfold_940
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Optimizing netlist .work.ks_level.INTERFACE_unfold_941
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Optimizing netlist .work.ks_level.INTERFACE_unfold_942
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Optimizing netlist .work.ks_level.INTERFACE_unfold_943
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Optimizing netlist .work.adder.INTERFACE_unfold_1221
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+Re-checking DRC after adjustments
+-- Optimizing netlist .work.alu.INTERFACE
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+Re-checking DRC after adjustments
+WARNING: transition time DRC violation on net alu.INTERFACE:nx496 cannot be fixed
+WARNING: transition time DRC violation on net alu.INTERFACE:nx1734 cannot be fixed
+Re-checking DRC after adjustments
+WARNING: transition time DRC violation on net alu.INTERFACE:nx496 cannot be fixed
+WARNING: transition time DRC violation on net alu.INTERFACE:nx1734 cannot be fixed
+-- Final Design Rule Check..
+Re-checking DRC after adjustments
+WARNING: transition time DRC violation on net alu.INTERFACE:nx496 cannot be fixed
+WARNING: transition time DRC violation on net alu.INTERFACE:nx1734 cannot be fixed
+Re-checking DRC after adjustments
+WARNING: transition time DRC violation on net alu.INTERFACE:nx496 cannot be fixed
+WARNING: transition time DRC violation on net alu.INTERFACE:nx1734 cannot be fixed
+Info, Command 'optimize' finished successfully
+Info: The target technology was not selected, ami05_typ was automatically selected for you.
+-- Optimizing netlist .work.ks_level.INTERFACE_unfold_940
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Optimizing netlist .work.ks_level.INTERFACE_unfold_941
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Optimizing netlist .work.ks_level.INTERFACE_unfold_942
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Optimizing netlist .work.ks_level.INTERFACE_unfold_943
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Optimizing netlist .work.adder.INTERFACE_unfold_1221
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Optimizing netlist .work.alu.INTERFACE
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+WARNING: transition time DRC violation on net alu.INTERFACE:nx496 cannot be fixed
+WARNING: transition time DRC violation on net alu.INTERFACE:nx1734 cannot be fixed
+-- Final Design Rule Check..
+Re-checking DRC after adjustments
+Re-checking DRC after adjustments
+WARNING: transition time DRC violation on net alu.INTERFACE:nx496 cannot be fixed
+WARNING: transition time DRC violation on net alu.INTERFACE:nx1734 cannot be fixed
+Info, Command 'optimize' finished successfully
+-- Start timing optimization for design .work.ks_level.INTERFACE_unfold_940
+Starting Timing Characterization...
+Starting Timing Analysis...
+Timing analysis done, time = 0 CPU secs.
+Timing characterization done, time = 0 CPU secs.
+Info, Command 'optimize_timing' finished successfully
+Info: setting edif_write_arrays to FALSE
+FALSE
+-- Writing file Proc.vhd
+Info, Command 'write' finished successfully
+-- Writing file Proc.edf
+Info, Command 'write' finished successfully
+-- Writing file Proc.v
+Warning, cell ks_level cannot be printed with multiple views in Verilog; view INTERFACE_unfold_942 ignored
+Warning, cell ks_level cannot be printed with multiple views in Verilog; view INTERFACE_unfold_941 ignored
+Warning, cell ks_level cannot be printed with multiple views in Verilog; view INTERFACE_unfold_940 ignored
+Info, Command 'write' finished successfully
+-- Writing file Proc.sdf
+Info, Command 'write' finished successfully
+CriticalPath
+
+
+
+                        Critical Path Report
+
+Critical path #1, (unconstrained path)
+NAME                               GATE              ARRIVAL              LOAD
+------------------------------------------------------------------------------
+A(15)/                                         0.00  0.00 up             0.25
+ix1320/Y                           xnor2       0.68  0.68 dn             0.10
+ix99/Y                             nand02_2x   0.45  1.12 up             0.07
+ix105/Y                            nor02ii     0.50  1.63 dn             0.04
+ix1348/Y                           nand02_2x   0.34  1.96 up             0.03
+ix113/Y                            nor02ii     0.52  2.48 dn             0.05
+ix1368/Y                           nand02_2x   0.35  2.83 up             0.03
+ix121/Y                            nor02ii     0.52  3.35 dn             0.05
+ix1392/Y                           nand02_2x   0.42  3.76 up             0.06
+ix129/Y                            nor02ii     0.35  4.11 dn             0.02
+ix1382/Y                           inv02       0.27  4.38 up             0.06
+ix1958/Y                           inv02       0.22  4.60 dn             0.04
+ix1412/Y                           nand02_2x   0.30  4.90 up             0.06
+ix137/Y                            nor02ii     0.34  5.24 dn             0.02
+ix1398/Y                           inv02       0.27  5.51 up             0.06
+ix1960/Y                           inv02       0.22  5.72 dn             0.04
+ix1432/Y                           nand02_2x   0.30  6.03 up             0.06
+ix145/Y                            nor02ii     0.34  6.36 dn             0.02
+ix1418/Y                           inv02       0.27  6.63 up             0.06
+ix1962/Y                           inv02       0.22  6.84 dn             0.04
+ix1450/Y                           nand02_2x   0.30  7.15 up             0.06
+ix1462/Y                           nor02ii     0.33  7.48 dn             0.02
+ix153/Y                            inv02       0.27  7.75 up             0.06
+ix1968/Y                           inv02       0.20  7.95 dn             0.03
+ix1550/Y                           aoi33       0.44  8.39 up             0.02
+ix1494/Y                           and04       0.60  8.99 up             0.02
+ix367/Y                            nand04      0.42  9.41 dn             0.04
+ix1456/Y                           aoi33       0.53  9.94 up             0.01
+ix399/Y                            oai21       0.43  10.37 dn             0.02
+ix405/Y                            mux21_ni    0.61  10.98 dn             0.01
+ix1306/Y                           aoi22       0.36  11.34 up             0.02
+ix581/Y                            nand04      0.29  11.62 dn             0.00
+C(0)/                                          0.00  11.62 dn             0.00
+data arrival time                                    11.62
+
+data required time                                not specified
+------------------------------------------------------------------------------
+data required time                                not specified
+data arrival time                                    11.62
+                                                  ----------
+                                               unconstrained path
+------------------------------------------------------------------------------
+
+
+Info, Command 'report_delay' finished successfully

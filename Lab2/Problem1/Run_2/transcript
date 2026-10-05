@@ -1,0 +1,49 @@
+# //  QuestaSim-64 6.5f Jun 16 2010 Linux 5.4.0-216-generic
+# //
+# //  Copyright 1991-2010 Mentor Graphics Corporation
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+ls
+# transcript
+# work
+cd ..
+ls
+# Problem1
+cd ..
+ls
+# Lab1
+# Lab2
+cd Lab2/Problem1
+ls
+# transcript
+# work
+vlib work
+# ** Warning: (vlib-34) Library already exists at "work".
+vlog adder.v alu.v
+# QuestaSim-64 vlog 6.5f Compiler 2010.06 Jun 16 2010
+# ** Error: (vlog-7) Failed to open design unit file "adder.v" in read mode.
+# No such file or directory. (errno = ENOENT)
+# /mgc/anacad2009_2c/questasim/v6.5f/linux_x86_64/vlog failed.
+ls
+# transcript
+# work
+ls
+# adder.v
+# alu.v
+# SCP
+# transcript
+# work
+vlog adder.v alu.v
+# QuestaSim-64 vlog 6.5f Compiler 2010.06 Jun 16 2010
+# -- Compiling module adder
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+source SCP
+# invalid command name "cktdir=/home/saab/318Exm/vending"
