@@ -3,7 +3,7 @@ end entity testbench;
 
 architecture testmult of testbench is
 signal x, y : bit_vector(3 downto 0);
-signal p    : bit_vector(7 downto 0);
+signal p : bit_vector(7 downto 0);
 begin
 
 dut : entity work.mult4x4(gen)
