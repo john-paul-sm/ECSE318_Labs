@@ -41,7 +41,7 @@ end architecture gates;
 library ieee;
 use ieee.std_logic_1164.all;
  
-entity shift_add_multiplier is
+entity multiplier is
     generic (N : positive := 4);
     port (
         clk          : in  std_logic;
@@ -52,9 +52,9 @@ entity shift_add_multiplier is
         product      : out std_logic_vector(2*N-1 downto 0);
         done         : out std_logic
     );
-end entity shift_add_multiplier;
+end entity multiplier;
  
-architecture structural of shift_add_multiplier is
+architecture structural of multiplier is
     signal p_q, a_q, b_q, p_d, a_d, b_d : std_logic_vector(N-1 downto 0);
     signal addend, sum                  : std_logic_vector(N-1 downto 0);
     signal carry                        : std_logic_vector(N downto 0);

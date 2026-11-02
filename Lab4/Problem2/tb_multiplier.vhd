@@ -2,10 +2,10 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
  
-entity tb_shift_add_multiplier is
-end entity tb_shift_add_multiplier;
+entity tb_multiplier is
+end entity tb_multiplier;
  
-architecture sim of tb_shift_add_multiplier is
+architecture sim of tb_multiplier is
     constant N     : positive := 4;
     constant T_CLK : time     := 10 ns;
  
@@ -20,7 +20,7 @@ architecture sim of tb_shift_add_multiplier is
 begin
     clk <= not clk after T_CLK/2 when not finished else clk;
  
-    dut : entity work.shift_add_multiplier(structural)
+    dut : entity work.multiplier(structural)
         generic map (N => N)
         port map (clk => clk, reset => reset, load => load,
                   multiplicand => multiplicand, multiplier => multiplier,
