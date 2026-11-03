@@ -68,11 +68,11 @@ ROWS: for i in 0 to 3 generate
     end generate TOPROW;
     -- leftmost cell: Sin = 0
     LEFTCELL: if i > 0 and j = 3 generate
-      cell: csa_cell port map (x(i), y(j), gnd, c(i-1)(j), s(i)(j), c(i)(j));
+      cell: csa_cell port map (x(i), y(j), gnd, c(i - 1)(j), s(i)(j), c(i)(j));
     end generate LEFTCELL;
 
     INNER: if i > 0 and j < 3 generate
-      cell: csa_cell port map (x(i), y(j), s(i-1)(j+1), c(i-1)(j), s(i)(j), c(i)(j));
+      cell: csa_cell port map (x(i), y(j), s(i - 1)(j + 1), c(i - 1)(j), s(i)(j), c(i)(j));
     end generate INNER;
 
   end generate COLS;
@@ -84,10 +84,10 @@ end generate ROWS;
 car(0) <= '0';
 CPA: for k in 0 to 3 generate
   LOWER: if k < 3 generate
-    add: fa port map (s(3)(k+1), c(3)(k), car(k), p(k+4), car(k+1));
+    add: fa port map (s(3)(k + 1), c(3)(k), car(k), p(k + 4), car(k + 1));
   end generate LOWER;
   TOPBIT: if k = 3 generate
-    add: fa port map (gnd, c(3)(k), car(k), p(k+4), car(k+1));
+    add: fa port map (gnd, c(3)(k), car(k), p(k + 4), car(k + 1));
   end generate TOPBIT;
 end generate CPA;
 
