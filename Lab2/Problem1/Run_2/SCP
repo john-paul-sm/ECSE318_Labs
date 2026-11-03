@@ -21,6 +21,7 @@ optimize -macro -auto -effort quick -hierarchy preserve
 
 optimize .work.alu.INTERFACE -macro -auto -effort quick -hierarchy preserve
 optimize_timing .work.alu.INTERFACE
+ungroup -all -hierarchy
 set edif_write_arrays FALSE
 
 write -downto PRIMITIVES -format vhdl   Proc.vhd
