@@ -72,7 +72,7 @@ NAME_list: _NAME			{ name_add($1); }
 	;
 
 net_declaration:
-          net_type NAME_list ';'	{ name_clear(); }	/* wires are just connections */
+          net_type NAME_list ';'	{ name_clear(); }
 	;
 
 net_type: WIRE

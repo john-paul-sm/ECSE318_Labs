@@ -74,7 +74,7 @@ Binary      ({Number})?'[bB][01xXzZ?][01xXzZ?_]*
 <Snormal>and                { return AND; }
 
 <Snormal>{AlphaU}{AlphaNumU}* { 
-		yylval.id = strdup(yytext); /* copy: yytext is overwritten by the next token */
+		yylval.id = strdup(yytext);
 		return _NAME; 
                               }
 <Snormal>{CtrStr}{AlphaNumC}* {
