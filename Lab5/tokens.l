@@ -74,12 +74,11 @@ Binary      ({Number})?'[bB][01xXzZ?][01xXzZ?_]*
 <Snormal>and                { return AND; }
 
 <Snormal>{AlphaU}{AlphaNumU}* { 
-                printf(" %s  ", yytext);
-		yylval.id = (char *)yytext; // yytext -> need to copy to declared space
+		yylval.id = strdup(yytext); /* copy: yytext is overwritten by the next token */
 		return _NAME; 
                               }
 <Snormal>{CtrStr}{AlphaNumC}* {
-		yylval.id = (char *)yytext;
+		yylval.id = strdup(yytext);
 		return _NAME;
 }
 <Snormal>{Number}*\.{Number}+ { return _NUMBER; }

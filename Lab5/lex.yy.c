@@ -939,8 +939,7 @@ case 20:
 YY_RULE_SETUP
 #line 77 "tokens.l"
 { 
-                printf(" %s  ", yytext);
-		yylval.id = (char *)yytext; // yytext -> need to copy to declared space
+		yylval.id = strdup(yytext); /* copy: yytext is overwritten by the next token */
 		return _NAME; 
                               }
 	YY_BREAK
@@ -949,7 +948,7 @@ case 21:
 YY_RULE_SETUP
 #line 82 "tokens.l"
 {
-		yylval.id = (char *)yytext;
+		yylval.id = strdup(yytext);
 		return _NAME;
 }
 	YY_BREAK

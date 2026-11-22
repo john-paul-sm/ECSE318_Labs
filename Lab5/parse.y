@@ -1,6 +1,7 @@
 %{
 
 #include 	<stdio.h>
+#include	"circuit.h"
 
 
 extern int yyerror();
@@ -23,69 +24,73 @@ char	*iname;
 
 /* Keywords */
 
-%token NAND WIRE AND OR NOR XOR XNOR BUF NOT DFF OUTPUT INPUT MoDULE ENDMoDULE 
+%token NAND WIRE AND OR NOR XOR XNOR BUF NOT DFF OUTPUT INPUT MoDULE ENDMoDULE
 
 /* string or number or name */
 %token <id> _NAME _STRING
 %token <ln> _NUMBER
 %token <ln> _BASENUMBER
 
+/* gate_type returns the integer gate code (T_AND, T_OR, ...) */
+%type  <ln> gate_type
+
 /* Directives */
 
 %%
 
-module: 
-      	MoDULE _NAME  '(' port_list ')' ';'  module_items ENDMoDULE	
+module:
+      	MoDULE _NAME  '(' port_list ')' ';'  { name_clear(); }	/* module ports not needed */
+	module_items ENDMoDULE
 	;
 
-port_list: port_ref				
-	| port_list ',' port_ref	
+port_list: port_ref
+	| port_list ',' port_ref
 	;
 
-port_ref: _NAME				
+port_ref: _NAME				{ name_add($1); }
 	;
 
 module_items: module_item
 	| module_items module_item
 	;
 
-module_item: input_declaration		
+module_item: input_declaration
 	| output_declaration		/* Done */
 	| net_declaration		/* Done */
 	| gate_instantiation		/* Done */
-        | error ';'
+        | error ';'			{ name_clear(); yyerrok; }
 	;
 
-input_declaration: INPUT  NAME_list ';' { printf("\n Input List");}
+input_declaration: INPUT  NAME_list ';'		{ decl_inputs(); }
 	;
 
-output_declaration: OUTPUT  NAME_list ';' { printf("\n Output List");}
+output_declaration: OUTPUT  NAME_list ';'	{ decl_outputs(); }
 	;
 
-NAME_list: _NAME	
-	| NAME_list ',' _NAME
+NAME_list: _NAME			{ name_add($1); }
+	| NAME_list ',' _NAME		{ name_add($3); }
 	;
 
-net_declaration: 
-          net_type NAME_list ';'	
+net_declaration:
+          net_type NAME_list ';'	{ name_clear(); }	/* wires are just connections */
 	;
 
-net_type: WIRE 					{ printf("\n WIRES ");}
+net_type: WIRE
 	;
 
 gate_instantiation:
-	  gate_type   _NAME '(' port_list ')' ';'
+	  gate_type   _NAME '(' port_list ')' ';'	{ decl_gate($1, $2); }
 	;
 
-gate_type: AND 					{ printf("\n AND");}
-	| NAND 					{ printf("\n AND");}
-	| OR 					{ printf("\n OR");}
-	| NOR 					{ printf("\n NOR");}
-	| XOR 					{ printf("\n XOR");}
-	| XNOR					{ printf("\n XNOR");}
-	| BUF 					{ printf("\n BUF");}
-	| NOT 					{ printf("\n NOT");}
-	| DFF					{ printf("\n DFF");}
+gate_type: AND 					{ $$ = T_AND;  }
+	| NAND 					{ $$ = T_NAND; }
+	| OR 					{ $$ = T_OR;   }
+	| NOR 					{ $$ = T_NOR;  }
+	| XOR 					{ $$ = T_XOR;  }
+	| XNOR					{ $$ = T_XNOR; }
+	| BUF 					{ $$ = T_BUF;  }
+	| NOT 					{ $$ = T_NOT;  }
+	| DFF					{ $$ = T_DFF;  }
 	;
 
 
