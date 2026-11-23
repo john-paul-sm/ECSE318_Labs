@@ -6,17 +6,17 @@
 #include <sys/stat.h>
 #include "circuit.h"
 
-extern	int	yyparse();
-extern	FILE	*yyin;
+extern int yyparse();
+extern FILE *yyin;
 
 struct gate *first_gate = NULL;
 struct gate *last_gate  = NULL;
 
 char **out_names = NULL;
-int    n_out     = 0;
+int n_out = 0;
 
-char **names   = NULL;
-int    n_names = 0;
+char **names = NULL;
+int n_names = 0;
 
 const char *type_name[] = { "INPUT", "AND", "NAND", "OR", "NOR", "XOR", "XNOR", "BUF", "NOT", "DFF" };
 
@@ -40,20 +40,20 @@ struct gate *new_gate(char *name, int type)
 {
   struct gate *g = (struct gate *) malloc(sizeof(struct gate));
 
-  g->name       = name;
-  g->type       = type;
-  g->fanin      = NULL;
-  g->nfanin     = 0;
+  g->name = name;
+  g->type = type;
+  g->fanin = NULL;
+  g->nfanin = 0;
   g->fanin_name = NULL;
-  g->fanout     = NULL;
-  g->nfanout    = 0;
-  g->next       = NULL;
-  g->level      = -1;
-  g->output     = 0;
-  g->id         = 0;
+  g->fanout = NULL;
+  g->nfanout = 0;
+  g->next = NULL;
+  g->level = -1;
+  g->output = 0;
+  g->id = 0;
 
   if (last_gate == NULL) first_gate = g;
-  else                   last_gate->next = g;
+  else last_gate->next = g;
   last_gate = g;
   return g;
 }
@@ -127,8 +127,7 @@ void connect_gates(void)
     for (i = 0; i < n; i++) {
       src = find_gate(g->fanin_name[i]);
       if (src == NULL) {
-        fprintf(stderr, "error: line %s (input of %s) has no driver\n",
-                g->fanin_name[i], g->name);
+        fprintf(stderr, "error: line %s (input of %s) has no driver\n",g->fanin_name[i], g->name);
         exit(1);
       }
       add_ptr(&g->fanin,    &g->nfanin,    src);
@@ -185,12 +184,12 @@ int levelize(void)
 
   do {
     changed = 0;
-    left    = 0;
+    left = 0;
     for (g = first_gate; g != NULL; g = g->next) {
       if (g->level >= 0) continue;
 
       ready = 1;
-      max   = 0;
+      max = 0;
       for (i = 0; i < g->nfanin; i++) {
         if (g->fanin[i]->level < 0) { ready = 0; break; }
         if (g->fanin[i]->level > max) max = g->fanin[i]->level;
@@ -207,8 +206,7 @@ int levelize(void)
   } while (left > 0 && changed);
 
   if (left > 0) {
-    fprintf(stderr, "error: %d gates could not be levelized "
-                    "(combinational loop without a DFF)\n", left);
+    fprintf(stderr, "error: %d gates could not be levelized " "(combinational loop without a DFF)\n", left);
     exit(1);
   }
   return maxlevel;
@@ -222,8 +220,8 @@ void print_results(int maxlevel)
   for (g = first_gate; g != NULL; g = g->next) {
     g->id = ngates++;
     if (g->type == T_INPUT) nin++;
-    if (g->type == T_DFF)   nff++;
-    if (g->output)          nout++;
+    if (g->type == T_DFF) nff++;
+    if (g->output) nout++;
   }
 
   printf("Gates per level\n");
