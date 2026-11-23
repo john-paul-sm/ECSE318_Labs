@@ -939,14 +939,14 @@ case 20:
 YY_RULE_SETUP
 #line 77 "tokens.l"
 { 
-		yylval.id = strdup(yytext); /* copy: yytext is overwritten by the next token */
+		yylval.id = strdup(yytext);
 		return _NAME; 
                               }
 	YY_BREAK
 case 21:
 /* rule 21 can match eol */
 YY_RULE_SETUP
-#line 82 "tokens.l"
+#line 81 "tokens.l"
 {
 		yylval.id = strdup(yytext);
 		return _NAME;
@@ -954,50 +954,50 @@ YY_RULE_SETUP
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 86 "tokens.l"
+#line 85 "tokens.l"
 { return _NUMBER; }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 87 "tokens.l"
+#line 86 "tokens.l"
 { return _NUMBER; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 88 "tokens.l"
+#line 87 "tokens.l"
 { yylval.ln=stringToNumber(yytext); return _NUMBER; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 89 "tokens.l"
+#line 88 "tokens.l"
 { yylval.ln = stringToNumber(yytext); return _BASENUMBER; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 90 "tokens.l"
+#line 89 "tokens.l"
 { yylval.ln = stringToNumber(yytext); return _BASENUMBER; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 91 "tokens.l"
+#line 90 "tokens.l"
 { yylval.ln = stringToNumber(yytext); return _BASENUMBER; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 92 "tokens.l"
+#line 91 "tokens.l"
 { yylval.ln = stringToNumber(yytext); return _BASENUMBER; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 93 "tokens.l"
+#line 92 "tokens.l"
 {return yytext[0];}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 95 "tokens.l"
+#line 94 "tokens.l"
 ECHO;
 	YY_BREAK
-#line 1002 "lex.yy.c"
+#line 1001 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(Snormal):
 case YY_STATE_EOF(Stable):
@@ -2004,7 +2004,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 95 "tokens.l"
+#line 94 "tokens.l"
 
 
 

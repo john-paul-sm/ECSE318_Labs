@@ -4,7 +4,7 @@
 #include	"circuit.h"
 
 
-extern int yyerror();
+extern int yyerror(const char *s);
 extern int yyparse();
 extern int yylex();
 extern int    yylineno ;
